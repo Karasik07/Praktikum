@@ -16,13 +16,23 @@ masMorze = ["*-", "-***", "*--", "--*",
             "*****", "-****", "--***",
             "---**", "----*", "-----"]
 
-text = "Я делаю практику"
+text = input("Введите сообщение на русском языке: ")
 text = text.upper()
-outputText = str()
+outputTextKoder = str()
+#Кодирование сообщения
 for val in text:
     if val != ' ':
-        outputText = outputText+masMorze[masSymbols.index(val,0)]
-        #print(masSymbols.index(val,0))
+        outputTextKoder = outputTextKoder+masMorze[masSymbols.index(val,0)] + " "
+print(outputTextKoder)
+
+outputTextDekoder = str()
+
+#Декодирование сообщения
+textKoder = outputTextKoder.split(" ")
+outputTextDekoder = str()
+for val in textKoder:
+    if val != " " and val != '':
+        outputTextDekoder = outputTextDekoder + masSymbols[masMorze.index(val,0)] + " "
     else:
-        outputText = outputText + "    "
-print(outputText)
+        outputTextDekoder = outputTextDekoder + " "
+print(outputTextDekoder)
